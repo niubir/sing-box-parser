@@ -40,3 +40,12 @@ func GenTag(tag string) string {
 	}
 	return fmt.Sprintf("PROXY_%s", string(b))
 }
+
+func ParseScheme(rawUri string) (scheme string) {
+	sp := "://"
+	sList := strings.Split(rawUri, sp)
+	if len(sList) == 2 {
+		scheme = sList[0] + sp
+	}
+	return
+}
