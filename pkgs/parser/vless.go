@@ -43,6 +43,7 @@ func (that *ParserVless) Parse(rawUri string) {
 			StreamSecurity:   query.Get("security"),
 			Path:             query.Get("path"),
 			Host:             query.Get("host"),
+			UserAgent:        query.Get("userAgent"),
 			GRPCServiceName:  query.Get("serviceName"),
 			GRPCMultiMode:    query.Get("mode"),
 			ServerName:       query.Get("sni"),

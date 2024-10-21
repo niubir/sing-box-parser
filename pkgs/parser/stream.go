@@ -5,6 +5,7 @@ type StreamField struct {
 	StreamSecurity   string
 	Path             string
 	Host             string
+	UserAgent        string
 	TCPHeaderType    string
 	GRPCServiceName  string
 	GRPCMultiMode    string

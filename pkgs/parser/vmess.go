@@ -65,6 +65,7 @@ func (that *ParserVmess) Parse(rawUri string) {
 	that.StreamField.StreamSecurity = j.Get("tls").String()
 	that.StreamField.Path = j.Get("path").String()
 	that.StreamField.Host = j.Get("host").String()
+	that.StreamField.UserAgent = j.Get("userAgent").String()
 	// that.StreamField.GRPCServiceName = j.GetString("serviceName")
 	// that.StreamField.GRPCMultiMode = j.GetString("mode")
 	that.StreamField.ServerName = j.Get("sni").String()

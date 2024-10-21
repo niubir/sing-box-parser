@@ -88,7 +88,8 @@ var SingHTTPandTCP string = `{
 }`
 
 var SingHTTPHeaders string = `{
-	"Host": []
+	"Host": [],
+	"User-Agent": ""
 }`
 
 var SingWebSocket string = `{
@@ -147,9 +148,15 @@ func PrepareStreamStr(cnf *gjson.Json, sf *parser.StreamField) (result *gjson.Js
 		if host == "" {
 			host = sf.ServerName
 		}
-		if host != "" {
+		userAgent := sf.UserAgent
+		if host != "" || userAgent != "" {
 			h := gjson.New(SingHTTPHeaders)
-			h.Set("Host", host)
+			if host != "" {
+				h.Set("Host", host)
+			}
+			if userAgent != "" {
+				h.Set("User-Agent", userAgent)
+			}
 			j = utils.SetJsonObjectByString("headers", h.MustToJsonString(), j)
 		}
 		if sf.Path == "" {

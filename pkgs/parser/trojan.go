@@ -31,6 +31,7 @@ func (that *ParserTrojan) Parse(rawUri string) {
 		that.StreamField = &StreamField{
 			Network:          query.Get("type"),
 			Host:             query.Get("peer"),
+			UserAgent:        query.Get("userAgent"),
 			Path:             query.Get("path"),
 			StreamSecurity:   query.Get("security"),
 			ServerName:       query.Get("sni"),
