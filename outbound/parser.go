@@ -11,7 +11,7 @@ type nodeToOutboundConfig struct {
 	streamSetors []parser.StreamFieldSetor
 }
 
-type option func(*nodeToOutboundConfig)
+type Option func(*nodeToOutboundConfig)
 
 func WithStreamSetors(streamSetors ...parser.StreamFieldSetor) func(*nodeToOutboundConfig) {
 	return func(c *nodeToOutboundConfig) {
@@ -19,7 +19,7 @@ func WithStreamSetors(streamSetors ...parser.StreamFieldSetor) func(*nodeToOutbo
 	}
 }
 
-func NodeToOutboundStr(url string, options ...option) (string, error) {
+func NodeToOutboundStr(url string, options ...Option) (string, error) {
 	var c nodeToOutboundConfig
 	for _, option := range options {
 		option(&c)
