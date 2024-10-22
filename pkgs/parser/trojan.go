@@ -40,7 +40,6 @@ func (that *ParserTrojan) Parse(rawUri string) {
 		}
 	} else {
 		logger.Error(err)
-		fmt.Println(rawUri)
 		return
 	}
 

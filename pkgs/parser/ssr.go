@@ -83,7 +83,6 @@ func (that *ParserSSR) parseParams(s string) {
 		if that.ProtoParam != "" {
 			that.ProtoParam = crypt.DecodeBase64(that.ProtoParam)
 		}
-		fmt.Println(u.Query().Get("remarks"))
 		that.Tag = utils.GenTag(u.Query().Get("remarks"))
 	}
 }

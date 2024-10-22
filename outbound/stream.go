@@ -206,7 +206,6 @@ func PrepareStreamStr(cnf *gjson.Json, sf *parser.StreamField) (result *gjson.Js
 			j = utils.SetJsonObjectByString("reality", reality.MustToJsonString(), j)
 		}
 		tlsStr = j.MustToJsonString()
-		// fmt.Println(tlsStr)
 	default:
 		tlsStr = `{"enabled": false}`
 	}
