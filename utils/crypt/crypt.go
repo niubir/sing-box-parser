@@ -114,11 +114,6 @@ func DecodeBase64(rawStr string) (res string) {
 		if err == nil {
 			return
 		}
-		if len(rawStr) > 5 {
-			fmt.Println(rawStr[len(rawStr)-5:])
-		} else {
-			fmt.Println(rawStr)
-		}
 	}
 	return
 }
