@@ -38,6 +38,7 @@ type ParserWirguard struct {
 	Address    string   `koanf,json:"address"`
 	Port       int      `koanf,json:"port"`
 	Tag        string
+	*StreamField
 }
 
 func (that *ParserWirguard) Parse(rawUri string) {
