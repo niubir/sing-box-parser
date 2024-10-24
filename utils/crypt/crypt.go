@@ -72,12 +72,7 @@ func (that *Crypt) AesDecrypt(crypted []byte) ([]byte, error) {
 }
 
 func IsValidBase64(str string) bool {
-	str = strings.TrimSpace(str)
-	if len(str) == 0 || len(str)%4 != 0 {
-		return false
-	}
-	_, err := base64.StdEncoding.DecodeString(str)
-	return err == nil
+	return len(DecodeBase64(str)) > 0
 }
 
 func EncodeBase64(str string) (res string) {
